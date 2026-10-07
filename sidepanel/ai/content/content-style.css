@@ -1,0 +1,42 @@
+/* sidepanel/ai/content/content-style.css - Visual feedback for AI agent element interactions */
+.sidebar-ai-highlight {
+  outline: 3px solid #7c5cff !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 16px rgba(124, 92, 255, 0.6) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  z-index: 2147483646 !important;
+  animation: sidebarAiPulse 1.2s infinite ease-in-out !important;
+}
+
+@keyframes sidebarAiPulse {
+  0% { box-shadow: 0 0 6px rgba(124, 92, 255, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(124, 92, 255, 0.9), 0 0 30px rgba(179, 161, 255, 0.6); outline-color: #b3a1ff; }
+  100% { box-shadow: 0 0 6px rgba(124, 92, 255, 0.4); }
+}
+
+.sidebar-ai-toast {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  background: rgba(18, 22, 32, 0.92) !important;
+  color: #f8fafc !important;
+  padding: 10px 18px !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(124, 92, 255, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  animation: sidebarAiSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes sidebarAiSlideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

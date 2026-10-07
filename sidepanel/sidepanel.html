@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barra Lateral Plus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+
+  <!-- ── Header ───────────────────────────────────────────── -->
+  <header class="header">
+    <button id="btn-home-back" class="icon-btn hidden" title="Voltar" aria-label="Voltar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+    <div class="brand-stack"><span id="header-title" class="brand-name">Barra Lateral Plus</span><span class="brand-context">MENU PRINCIPAL</span></div>
+    <button id="btn-save-current-page" class="icon-btn hidden" title="Salvar aba atual" aria-label="Salvar aba atual">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/>
+      </svg>
+    </button>
+    <button id="btn-add-toggle" class="icon-btn hidden" title="Adicionar página" aria-label="Adicionar página">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+      </svg>
+    </button>
+    <button id="btn-settings" class="icon-btn" title="Configurações" aria-label="Abrir configurações">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+    </button>
+  </header>
+
+  <!-- ── Home menu ────────────────────────────────────────── -->
+  <nav id="home-menu" class="home-menu" aria-label="Menu principal">
+    <button class="menu-item" data-screen="pages">
+      <span class="menu-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+      </span>
+      <span class="menu-item-label">Navegador Web</span>
+      <svg class="menu-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <button class="menu-item" data-screen="notes">
+      <span class="menu-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+      </span>
+      <span class="menu-item-label">Notas</span>
+      <svg class="menu-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <button class="menu-item" data-screen="savedtabs">
+      <span class="menu-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+      </span>
+      <span class="menu-item-label">Abas Salvas</span>
+      <svg class="menu-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <div class="menu-divider" role="separator"></div>
+    <button class="menu-item" data-screen="export">
+      <span class="menu-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+      </span>
+      <span class="menu-item-label">Exportar</span>
+      <svg class="menu-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <button class="menu-item" data-screen="downloader">
+      <span class="menu-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17V3"/><path d="m6 11 6 6 6-6"/><path d="M19 21H5"/></svg>
+      </span>
+      <span class="menu-item-label">Downloader</span>
+      <svg class="menu-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <button class="menu-item" data-screen="extensiondownloader">
+      <span class="menu-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z"/></svg>
+      </span>
+      <span class="menu-item-label">Baixar Extensões</span>
+      <svg class="menu-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <button class="menu-item" data-screen="shortener">
+      <span class="menu-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 007.07 0l2.83-2.83a5 5 0 00-7.07-7.07L11.5 4.5"/>
+          <path d="M14 11a5 5 0 00-7.07 0L4.1 13.83a5 5 0 007.07 7.07l1.36-1.36"/>
+        </svg>
+      </span>
+      <span class="menu-item-label">Encurtador de URL</span>
+      <svg class="menu-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <button class="menu-item" data-screen="translator">
+      <span class="menu-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+      </span>
+      <span class="menu-item-label">Tradutor</span>
+      <svg class="menu-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <button class="menu-item" data-screen="addresses">
+      <span class="menu-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+      </span>
+      <span class="menu-item-label">Endereços</span>
+      <svg class="menu-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <button class="menu-item" data-screen="gdrive">
+      <span class="menu-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7.71 3.5L1.15 15l3.43 6h6.56l-6.56-12z"/>
+          <path d="M9.5 15l3.43 6h7.92l-3.43-6z"/>
+          <path d="M14.29 3.5H7.71l6.58 11.5h6.56z"/>
+        </svg>
+      </span>
+      <span class="menu-item-label">Nuvem de Arquivos</span>
+      <svg class="menu-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <button class="menu-item" data-screen="email">
+      <span class="menu-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </span>
+      <span class="menu-item-label">E-mail Temporário</span>
+      <svg class="menu-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <button class="menu-item" data-screen="emailclient">
+      <span class="menu-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="5" width="20" height="14" rx="2"/>
+          <path d="M2 7l8.5 6a2.5 2.5 0 003 0L22 7"/>
+        </svg>
+      </span>
+      <span class="menu-item-label">Cliente de E-mail</span>
+      <svg class="menu-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <button class="menu-item" data-screen="automacao">
+      <span class="menu-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+      </span>
+      <span class="menu-item-label">Automação</span>
+      <svg class="menu-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <button class="menu-item" data-screen="contextmenu">
+      <span class="menu-item-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/>
+          <rect x="3" y="3" width="18" height="18" rx="3"/>
+        </svg>
+      </span>
+      <span class="menu-item-label">Menu de Contexto</span>
+      <svg class="menu-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </nav>
+
+  <!-- ── Add-URL Panel ─────────────────────────────────────── -->
+  <section id="add-panel" class="add-panel hidden" aria-label="Adicionar URL">
+    <div class="add-panel-inner">
+      <h2 class="add-panel-title">Nova página fixada</h2>
+      <div class="input-group">
+        <label for="input-url" class="input-label">URL</label>
+        <input id="input-url" type="url" class="text-input" placeholder="https://exemplo.com" autocomplete="off" spellcheck="false" />
+      </div>
+      <div class="input-group">
+        <label for="input-title" class="input-label">Título (opcional)</label>
+        <input id="input-title" type="text" class="text-input" placeholder="Minha página" autocomplete="off" />
+      </div>
+      <div class="input-group">
+        <label for="input-category" class="input-label">Categoria</label>
+        <select id="input-category" class="text-input">
+          <option value="">Sem categoria</option>
+        </select>
+      </div>
+      <div class="add-panel-actions">
+        <button id="btn-cancel" class="btn btn-ghost">Cancelar</button>
+        <button id="btn-save" class="btn btn-primary">
+          <span>Fixar página</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </button>
+      </div>
+      <p id="add-error" class="error-msg hidden" role="alert"></p>
+    </div>
+  </section>
+
+  <!-- ── Pages screen: List + Viewer ─────────────────────────── -->
+  <main id="pages-view" class="main-view screen hidden">
+    <div id="pages-list-container" class="pages-list-container">
+      <form id="browser-url-form" class="browser-url-form">
+        <input id="browser-url-input" class="text-input" type="url" placeholder="Digite ou cole uma URL para abrir aqui…" autocomplete="off" spellcheck="false" />
+        <button class="btn btn-primary btn-sm" type="submit">Ir</button>
+      </form>
+      <div class="pages-categories-toolbar">
+        <input id="category-name-input" class="text-input" type="text" placeholder="Nova categoria" autocomplete="off" />
+        <button id="btn-add-category" type="button" class="btn btn-ghost btn-sm">Adicionar</button>
+      </div>
+      <p id="category-status" class="status-msg hidden"></p>
+      <div id="empty-state" class="empty-state hidden">
+        <div class="empty-icon">📎</div>
+        <p class="empty-title">Nenhuma página fixada</p>
+        <p class="empty-sub">Clique em <strong>+</strong> para adicionar ou use o menu de contexto numa página.</p>
+      </div>
+      <ul id="pages-list" class="pages-list" role="list" aria-label="Páginas fixadas"></ul>
+      <p id="browser-drop-hint" class="browser-drop-hint">Arraste um link para esta área para abri-lo na sidebar.</p>
+    </div>
+
+    <div id="viewer-container" class="viewer-container hidden">
+      <div class="viewer-toolbar">
+        <button id="btn-back" class="icon-btn" title="Voltar para lista" aria-label="Fechar visualizador">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <span id="viewer-title" class="viewer-title"></span>
+        <form id="viewer-url-form" class="viewer-url-form">
+          <input id="viewer-url-input" class="text-input" type="url" placeholder="URL…" autocomplete="off" spellcheck="false" />
+          <button class="btn btn-primary btn-xs" type="submit">Ir</button>
+        </form>
+        <button id="btn-restore-page" class="btn btn-ghost btn-xs" title="Voltar para a página salva">Página salva</button>
+        <a id="btn-open-tab" class="icon-btn" title="Abrir em nova aba" aria-label="Abrir em nova aba" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+            <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+      </div>
+
+      <div id="viewer-loading" class="viewer-loading hidden">
+        <div class="spinner"></div>
+        <p>Carregando…</p>
+      </div>
+
+      <div id="viewer-error" class="viewer-error hidden">
+        <div class="viewer-error-icon">⚠️</div>
+        <p id="viewer-error-msg" class="viewer-error-msg"></p>
+        <a id="viewer-open-link" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Abrir em nova aba</a>
+      </div>
+
+      <iframe
+        id="page-iframe"
+        class="page-iframe"
+        title="Página fixada"
+        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+        referrerpolicy="no-referrer"
+      ></iframe>
+    </div>
+  </main>
+
+  <!-- ── Notes screen ─────────────────────────────────────────── -->
+  <main id="notes-view" class="notes-view screen hidden">
+    <div class="notes-toolbar">
+      <button id="btn-new-note" class="btn btn-primary btn-sm">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+        <span>Nova nota</span>
+      </button>
+    </div>
+
+    <div id="notes-list-container" class="notes-list-container">
+      <div id="notes-empty-state" class="empty-state hidden">
+        <div class="empty-icon">🗒️</div>
+        <p class="empty-title">Nenhuma nota ainda</p>
+        <p class="empty-sub">Clique em <strong>Nova nota</strong> para começar a anotar.</p>
+      </div>
+      <ul id="notes-list" class="notes-list" role="list" aria-label="Notas salvas"></ul>
+    </div>
+  </main>
+
+  <!-- ── Saved tabs screen ────────────────────────────────────── -->
+  <main id="savedtabs-view" class="tool-view screen hidden">
+    <div class="tool-panel">
+      <div class="savedtabs-actions">
+        <button id="btn-save-current-tab" class="btn btn-ghost btn-sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+          <span>Salvar aba atual</span>
+        </button>
+        <button id="btn-save-all-tabs" class="btn btn-ghost btn-sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/>
+          </svg>
+          <span>Salvar todas as abas</span>
+        </button>
+      </div>
+
+      <div id="savedtabs-empty-state" class="empty-state hidden">
+        <div class="empty-icon">🗂️</div>
+        <p class="empty-title">Nenhuma aba salva</p>
+        <p class="empty-sub">Salve a aba atual ou todas as abas abertas para reabrir depois.</p>
+      </div>
+      <ul id="savedtabs-list" class="pages-list" role="list" aria-label="Abas salvas"></ul>
+    </div>
+  </main>
+
+  <!-- ── Export screen ──────────────────────────────────────────── -->
+  <main id="export-view" class="tool-view screen hidden">
+    <div class="tool-panel">
+      <div class="segmented" id="export-source-segmented">
+        <button class="segmented-btn active" data-source="current">Página atual</button>
+        <button class="segmented-btn" data-source="link">Inserir link</button>
+      </div>
+
+      <div class="input-group" id="export-url-group">
+        <label for="export-url-input" class="input-label">URL</label>
+        <input id="export-url-input" type="url" class="text-input" placeholder="https://exemplo.com/artigo" autocomplete="off" spellcheck="false" />
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">Formato</label>
+        <div class="format-chips">
+          <button class="chip active" data-format="pdf">PDF</button>
+          <button class="chip" data-format="md">Markdown</button>
+          <button class="chip" data-format="docx">DOCX</button>
+        </div>
+      </div>
+
+      <p class="tool-hint" id="export-hint">O PDF é gerado pela caixa de impressão do navegador — escolha "Salvar como PDF" no destino.</p>
+
+      <button id="btn-export" class="btn btn-primary btn-block">
+        <span>Exportar</span>
+      </button>
+
+      <p id="export-status" class="status-msg hidden"></p>
+    </div>
+  </main>
+
+  <!-- ── Downloader screen ──────────────────────────────────────── -->
+  <main id="downloader-view" class="tool-view screen hidden">
+    <div class="tool-panel">
+      <div class="input-group">
+        <label for="downloader-mode" class="input-label">Função</label>
+        <select id="downloader-mode" class="text-input">
+          <option value="media">Mídia por URL (vídeo, áudio, imagem)</option>
+          <option value="page">Baixar Página Web</option>
+          <option value="social">Redes Sociais (aba atual)</option>
+        </select>
+      </div>
+      <div id="dl-mode-media">
+      <!-- Input bar with quick actions -->
+      <div class="input-group">
+        <label for="downloader-url-input" class="input-label" style="display:flex;justify-content:space-between;align-items:center">
+          <span>URL do Vídeo, Áudio, Imagem ou Página</span>
+          <div style="display:flex;gap:6px">
+            <button id="btn-downloader-paste" type="button" class="btn btn-ghost btn-xs" title="Colar da área de transferência">📋 Colar</button>
+            <button id="btn-downloader-current-tab" type="button" class="btn btn-ghost btn-xs" title="Usar URL da aba ativa do navegador">📌 Aba Atual</button>
+          </div>
+        </label>
+        <div style="display:flex;gap:6px">
+          <input id="downloader-url-input" type="url" class="text-input" placeholder="Cole link do YouTube, TikTok, Insta, ou página..." autocomplete="off" spellcheck="false" style="flex:1" />
+          <button id="btn-download" class="btn btn-primary" style="flex-shrink:0;padding:0 14px" title="Analisar e capturar mídias">
+            <span>Analisar</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;margin-left:4px"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <p id="downloader-status" class="status-msg hidden"></p>
+
+      <!-- Platform Detection & Quick Injectors Box -->
+      <div id="downloader-injectors-panel" class="downloader-injectors-card hidden">
+        <div class="injectors-header">
+          <div class="injectors-platform-tag" id="injectors-platform-badge">
+            <span id="injectors-platform-icon">🌐</span>
+            <span id="injectors-platform-name">Página Detectada</span>
+          </div>
+          <span class="injectors-platform-sub" id="injectors-platform-sub">Injetores de download com 1 clique:</span>
+        </div>
+        <div class="injectors-grid" id="injectors-buttons-container">
+          <!-- Injetores serão renderizados dinamicamente -->
+        </div>
+      </div>
+
+      <!-- Detected Media from Page (Sniffer Results) -->
+      <div id="downloader-media-section" class="downloader-media-card hidden">
+        <div class="downloader-media-header">
+          <div class="downloader-media-title-row">
+            <span class="downloader-section-title">Mídias Encontradas na Página</span>
+            <span id="detected-media-count" class="badge-pill">0</span>
+          </div>
+          <!-- Filter chips -->
+          <div class="format-chips" id="downloader-filter-chips">
+            <button class="chip active" data-filter="all">Todas</button>
+            <button class="chip" data-filter="video">Vídeos (<span id="cnt-videos">0</span>)</button>
+            <button class="chip" data-filter="audio">Áudios (<span id="cnt-audios">0</span>)</button>
+            <button class="chip" data-filter="image">Imagens (<span id="cnt-images">0</span>)</button>
+          </div>
+        </div>
+
+        <div class="downloader-batch-actions" id="downloader-batch-actions">
+          <button id="btn-download-all-images" class="btn btn-ghost btn-sm" title="Baixar todas as imagens em arquivo compactado .ZIP">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Baixar Todas Imagens (.ZIP)</span>
+          </button>
+        </div>
+
+        <ul id="detected-media-list" class="detected-media-list"></ul>
+      </div>
+
+      <!-- Recent Downloads History -->
+      <div class="downloader-history-section">
+        <div class="downloader-media-title-row" style="margin-top:14px;margin-bottom:6px">
+          <span class="downloader-section-title">Downloads Recentes</span>
+          <button id="btn-clear-downloads-history" class="btn btn-ghost btn-xs" style="color:var(--text-muted)">Limpar</button>
+        </div>
+        <ul id="downloads-list" class="downloads-list"></ul>
+      </div>
+</div>
+      <div id="dl-mode-page" class="hidden">
+      <h2>Baixa Página Web</h2>
+      <p class="tool-hint">Salva a página completa em um único arquivo HTML, incluindo recursos disponíveis e mantendo a estrutura visual.</p>
+      <button id="savepage-current" type="button" class="btn btn-primary btn-block">Salvar página da aba atual</button>
+      <label class="settings-check"><input id="savepage-save-raw" type="checkbox"> Salvar HTML bruto sem processar recursos</label>
+      <p id="savepage-status" class="status-msg hidden"></p>
+    </div>
+      <div id="dl-mode-social" class="hidden">
+      <div class="social-downloader-toolbar">
+        <span id="social-page-info">Analise a aba atual para encontrar mídias.</span>
+        <button id="social-refresh" type="button" class="btn btn-secondary btn-xs">Atualizar</button>
+      </div>
+      <p id="social-status" class="status-msg hidden"></p>
+      <div class="social-downloader-actions">
+        <button id="social-select-page" type="button" class="btn btn-secondary">Selecionar na página</button>
+        <button id="social-download-all" type="button" class="btn btn-primary" disabled>Baixar tudo</button>
+      </div>
+      <p id="social-count" class="tool-hint">0 itens encontrados</p>
+      <section id="social-media-list" class="social-media-list" aria-live="polite"></section>
+      <p id="social-empty" class="tool-hint">Nenhuma mídia pública encontrada.</p>
+      <p class="tool-hint">Funciona com imagens, vídeos e áudios públicos da aba atual. Não contorna contas privadas, bloqueios ou DRM.</p>
+    </div>
+    </div>
+  </main>
+
+  <!-- ── Extension settings screen ────────────────────────────── -->
+  <main id="settings-view" class="tool-view screen hidden">
+    <div class="tool-panel settings-panel">
+      <section class="settings-card">
+        <h2>Aparência</h2>
+        <p class="tool-hint">Escolha como a Barra Lateral Plus deve aparecer.</p>
+        <label class="input-label" for="settings-theme-select">Tema</label>
+        <select id="settings-theme-select" class="text-input">
+          <option value="dark">Escuro</option>
+          <option value="light">Claro</option>
+          <option value="system">Seguir tema do navegador</option>
+        </select>
+      </section>
+      <section class="settings-card">
+        <h2>Backup e restauração</h2>
+        <p class="tool-hint">O backup inclui dados, preferências, páginas, notas e configurações dos módulos armazenados nesta extensão.</p>
+        <div class="settings-actions">
+          <button id="settings-export" type="button" class="btn btn-primary">Exportar configurações</button>
+          <button id="settings-import" type="button" class="btn btn-secondary">Importar configurações</button>
+          <input id="settings-import-file" type="file" accept="application/json,.json" class="hidden" />
+        </div>
+        <p id="settings-backup-status" class="status-msg hidden"></p>
+      </section>
+      <section class="settings-card">
+        <h2>Configurações extras por menu</h2>
+        <div id="settings-tabs" class="settings-tabs" role="tablist">
+          <button class="settings-tab active" type="button" data-settings-tab="browser">Navegador</button>
+          <button class="settings-tab" type="button" data-settings-tab="notes">Notas</button>
+          <button class="settings-tab" type="button" data-settings-tab="downloader">Downloader</button>
+          <button class="settings-tab" type="button" data-settings-tab="cloud">Nuvem</button>
+          <button class="settings-tab" type="button" data-settings-tab="automation">Automação</button>
+          <button class="settings-tab" type="button" data-settings-tab="email">E-mail</button>
+          <button class="settings-tab" type="button" data-settings-tab="social">Redes sociais</button>
+        </div>
+        <div class="settings-tab-panel" data-settings-panel="browser">
+          <label class="settings-check"><input type="checkbox" data-setting="browser.confirmDelete"> Confirmar exclusão de páginas</label>
+          <label class="settings-check"><input type="checkbox" data-setting="browser.openLinksInNewTab"> Abrir links salvos em nova aba</label>
+        </div>
+        <div class="settings-tab-panel hidden" data-settings-panel="notes">
+          <label class="settings-check"><input type="checkbox" data-setting="notes.confirmDelete"> Confirmar exclusão de notas</label>
+          <label class="settings-check"><input type="checkbox" data-setting="notes.includeDateOnExport"> Incluir data nas exportações</label>
+        </div>
+        <div class="settings-tab-panel hidden" data-settings-panel="downloader">
+          <label class="settings-check"><input type="checkbox" data-setting="downloader.autoDetectCurrentTab"> Analisar a aba atual ao abrir</label>
+          <label class="input-label" for="settings-download-prefix">Prefixo dos arquivos</label>
+          <input id="settings-download-prefix" class="text-input" data-setting="downloader.filenamePrefix" placeholder="social-media" />
+        </div>
+        <div class="settings-tab-panel hidden" data-settings-panel="cloud">
+          <label class="settings-check"><input type="checkbox" data-setting="cloud.rememberLastProvider"> Lembrar o último provedor usado</label>
+          <label class="settings-check"><input type="checkbox" data-setting="cloud.showHiddenFiles"> Mostrar arquivos ocultos quando disponível</label>
+        </div>
+        <div class="settings-tab-panel hidden" data-settings-panel="automation">
+          <label class="settings-check"><input type="checkbox" data-setting="automation.confirmRun"> Confirmar antes de executar automações</label>
+          <label class="settings-check"><input type="checkbox" data-setting="automation.saveExecutionHistory"> Salvar histórico de execução</label>
+        </div>
+        <div class="settings-tab-panel hidden" data-settings-panel="email">
+          <label class="settings-check"><input type="checkbox" data-setting="email.notifyNewMessages"> Notificar novas mensagens</label>
+          <label class="settings-check"><input type="checkbox" data-setting="email.markReadAfterOpen"> Marcar como lida ao abrir</label>
+        </div>
+        <div class="settings-tab-panel hidden" data-settings-panel="social">
+          <label class="settings-check"><input type="checkbox" data-setting="social.includeImages"> Detectar imagens</label>
+          <label class="settings-check"><input type="checkbox" data-setting="social.includeVideos"> Detectar vídeos</label>
+          <label class="settings-check"><input type="checkbox" data-setting="social.includeAudio"> Detectar áudios</label>
+        </div>
+        <p id="settings-extra-status" class="status-msg hidden"></p>
+      </section>
+    </div>
+  </main>
+
+  <!-- ── Chrome extension downloader screen ───────────────────── -->
+  <main id="extensiondownloader-view" class="tool-view screen hidden">
+    <div class="tool-panel extension-downloader-panel">
+      <h2>Baixar Extensões</h2>
+      <p class="tool-hint">Cole a URL de uma extensão da Chrome Web Store para baixar o pacote ou abrir o código-fonte.</p>
+      <form id="extension-downloader-form" class="input-group">
+        <label for="extension-url-input" class="input-label">URL da extensão</label>
+        <input id="extension-url-input" class="text-input" type="url" placeholder="https://chromewebstore.google.com/detail/nome/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" autocomplete="off" spellcheck="false" required />
+        <div class="extension-downloader-actions">
+          <button id="extension-download-crx" type="button" class="btn btn-primary">Baixar .CRX</button>
+          <button id="extension-download-zip" type="button" class="btn btn-secondary">Baixar .ZIP</button>
+          <button id="extension-view-source" type="button" class="btn btn-ghost">Ver Código-Fonte</button>
+        </div>
+      </form>
+      <p id="extension-downloader-status" class="status-msg hidden"></p>
+    </div>
+  </main>
+
+  <!-- ── Translator screen ─────────────────────────────────────── -->
+  <main id="translator-view" class="tool-view screen hidden">
+    <div class="tool-panel">
+      <div class="input-group">
+        <label for="tr-input" class="input-label" style="display:flex;justify-content:space-between;align-items:center">
+          <span>Texto <span id="tr-detected" class="tool-hint" style="margin-left:6px"></span></span>
+          <button id="tr-clear" type="button" class="btn btn-ghost btn-xs" title="Limpar texto e tradução">🗑️ Excluir</button>
+        </label>
+        <textarea id="tr-input" class="text-input" rows="5" placeholder="Digite ou cole o texto (o idioma é detectado automaticamente; vários idiomas no mesmo texto são aceitos)" spellcheck="false"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="tr-target" class="input-label">Traduzir para</label>
+        <div style="display:flex;gap:6px">
+          <select id="tr-target" class="text-input" style="flex:1">
+            <option value="pt" selected>Português (Brasil)</option>
+            <option value="en">Inglês</option>
+            <option value="es">Espanhol</option>
+          </select>
+          <button id="tr-swap" type="button" class="btn btn-secondary" style="flex-shrink:0" title="Inverter: a tradução vira o texto e o idioma de origem vira o destino">⇅ Inverter</button>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="tr-output" class="input-label" style="display:flex;justify-content:space-between;align-items:center">
+          <span>Tradução</span>
+          <button id="tr-copy" type="button" class="btn btn-ghost btn-xs" title="Copiar tradução">📋 Copiar</button>
+        </label>
+        <textarea id="tr-output" class="text-input" rows="5" readonly placeholder="A tradução aparece aqui"></textarea>
+      </div>
+      <p id="tr-status" class="status-msg hidden"></p>
+    </div>
+  </main>
+
+  <!-- ── URL Shortener screen ──────────────────────────────────── -->
+  <main id="shortener-view" class="tool-view screen hidden">
+    <div class="tool-panel">
+      <p class="tool-hint">Gera um link curto (via TinyURL) para acessar em qualquer dispositivo.</p>
+
+      <div class="input-group">
+        <label for="shortener-url-input" class="input-label">URL original</label>
+        <input id="shortener-url-input" type="url" class="text-input" placeholder="https://exemplo.com/pagina-com-link-enorme" autocomplete="off" spellcheck="false" />
+      </div>
+
+      <button id="btn-shorten" class="btn btn-primary btn-block">
+        <span>Encurtar</span>
+      </button>
+
+      <p id="shortener-status" class="status-msg hidden"></p>
+
+      <div id="shortener-result" class="shortener-result hidden">
+        <input id="shortener-result-input" class="text-input" type="text" readonly />
+        <button id="btn-copy-short" class="icon-btn" title="Copiar" aria-label="Copiar link curto">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2"/>
+            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+          </svg>
+        </button>
+      </div>
+
+      <ul id="shortener-history" class="shortener-history"></ul>
+    </div>
+  </main>
+
+  <!-- ── Context Menu settings screen ────────────────────────────── -->
+  <main id="contextmenu-view" class="tool-view screen hidden">
+    <div class="tool-panel">
+      <div class="segmented" id="ctxmenu-subnav-segmented">
+        <button class="segmented-btn active" data-cctab="commands">⚡ Comandos</button>
+        <button class="segmented-btn" data-cctab="links">🔗 Links Rápidos</button>
+        <button class="segmented-btn" data-cctab="history">🕒 Histórico</button>
+        <button class="segmented-btn" data-cctab="settings">⚙️ Bridge</button>
+      </div>
+
+      <!-- ── Sub-tab: Context Commander (cmd/powershell/script/browser_js/webhook) ── -->
+      <div id="cc-panel-commands" class="cc-subpanel">
+        <p class="tool-hint">Comandos executados pelo Bridge local (Windows/PowerShell/scripts) ou injetados na página (JS). Aparecem em <strong>⚙️ Menu de Contexto</strong> ao clicar com o botão direito.</p>
+
+        <div class="input-group">
+          <label for="cc-title-input" class="input-label">Título do comando</label>
+          <input id="cc-title-input" type="text" class="text-input" placeholder="Ex: Ping no Domínio ({{domain}})" autocomplete="off" />
+        </div>
+
+        <div class="input-group">
+          <label for="cc-type-select" class="input-label">Tipo</label>
+          <select id="cc-type-select" class="text-input">
+            <option value="powershell">PowerShell (via Bridge)</option>
+            <option value="cmd">CMD do Windows (via Bridge)</option>
+            <option value="script">Rodar arquivo de script (.ps1/.py/.bat)</option>
+            <option value="open">Abrir programa/arquivo</option>
+            <option value="browser_js">Executar JS na página (script)</option>
+            <option value="copy_template">Copiar template para a área de transferência</option>
+            <option value="open_url">Abrir URL</option>
+            <option value="webhook">Chamar Webhook (HTTP)</option>
+          </select>
+        </div>
+
+        <!-- cmd/powershell/script/open -->
+        <div class="input-group cc-field-group" data-cc-fields="cmd,powershell,script,open">
+          <label for="cc-command-input" class="input-label">Comando</label>
+          <textarea id="cc-command-input" class="text-input" rows="3" placeholder="ping {{domain}}" spellcheck="false"></textarea>
+        </div>
+        <div class="input-group cc-field-group" data-cc-fields="cmd,powershell,script,open">
+          <label class="checkbox-label"><input type="checkbox" id="cc-interactive-check" /> Abrir em console interativo (janela visível)</label>
+        </div>
+
+        <!-- browser_js -->
+        <div class="input-group cc-field-group hidden" data-cc-fields="browser_js">
+          <label for="cc-code-input" class="input-label">Código JavaScript</label>
+          <textarea id="cc-code-input" class="text-input" rows="5" placeholder="(() => { alert('{{selection}}'); })();" spellcheck="false"></textarea>
+        </div>
+
+        <!-- copy_template -->
+        <div class="input-group cc-field-group hidden" data-cc-fields="copy_template">
+          <label for="cc-template-input" class="input-label">Template</label>
+          <textarea id="cc-template-input" class="text-input" rows="2" placeholder="[{{title}}]({{url}})" spellcheck="false"></textarea>
+        </div>
+
+        <!-- open_url -->
+        <div class="input-group cc-field-group hidden" data-cc-fields="open_url">
+          <label for="cc-url-input" class="input-label">URL</label>
+          <input id="cc-url-input" type="text" class="text-input" placeholder="https://exemplo.com/{{domain}}" autocomplete="off" spellcheck="false" />
+        </div>
+
+        <!-- webhook -->
+        <div class="input-group cc-field-group hidden" data-cc-fields="webhook">
+          <label for="cc-webhook-url-input" class="input-label">URL do Webhook</label>
+          <input id="cc-webhook-url-input" type="text" class="text-input" placeholder="https://meu-n8n.exemplo.com/webhook/x" autocomplete="off" spellcheck="false" />
+        </div>
+        <div class="input-group cc-field-group hidden" data-cc-fields="webhook">
+          <label for="cc-webhook-method-select" class="input-label">Método</label>
+          <select id="cc-webhook-method-select" class="text-input">
+            <option value="POST">POST</option>
+            <option value="GET">GET</option>
+            <option value="PUT">PUT</option>
+          </select>
+        </div>
+        <div class="input-group cc-field-group hidden" data-cc-fields="webhook">
+          <label for="cc-webhook-payload-input" class="input-label">Payload (JSON, opcional)</label>
+          <textarea id="cc-webhook-payload-input" class="text-input" rows="2" placeholder='{"url":"{{url}}"}' spellcheck="false"></textarea>
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">Aparecer em</label>
+          <div class="format-chips" id="cc-contexts">
+            <button class="chip active" data-ctx="page">Página</button>
+            <button class="chip" data-ctx="link">Link</button>
+            <button class="chip" data-ctx="selection">Seleção de texto</button>
+          </div>
+        </div>
+
+        <button id="btn-add-cc-command" class="btn btn-primary btn-block">
+          <span>Adicionar comando</span>
+        </button>
+
+        <p id="cc-status" class="status-msg hidden"></p>
+
+        <div id="cc-empty-state" class="empty-state hidden">
+          <div class="empty-icon">⚡</div>
+          <p class="empty-title">Nenhum comando personalizado</p>
+          <p class="empty-sub">Crie comandos que rodam PowerShell/CMD (via Bridge local), scripts, JS na página ou webhooks.</p>
+        </div>
+        <ul id="cc-commands-list" class="downloads-list"></ul>
+      </div>
+
+      <!-- ── Sub-tab: Links rápidos (regras antigas, só "abrir URL") ── -->
+      <div id="cc-panel-links" class="cc-subpanel hidden">
+        <p class="tool-hint">Itens simples que só abrem uma URL em nova aba.</p>
+
+        <div class="input-group">
+          <label for="ctxmenu-title-input" class="input-label">Título do item</label>
+          <input id="ctxmenu-title-input" type="text" class="text-input" placeholder="Ex: Abrir extensões" autocomplete="off" />
+        </div>
+
+        <div class="input-group" id="ctxmenu-url-group">
+          <label for="ctxmenu-url-input" class="input-label">URL / ação</label>
+          <input id="ctxmenu-url-input" type="text" class="text-input" placeholder="https://... ou chrome://extensions" autocomplete="off" spellcheck="false" />
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">Aparecer em</label>
+          <div class="format-chips" id="ctxmenu-contexts">
+            <button class="chip active" data-ctx="page">Página</button>
+            <button class="chip" data-ctx="link">Link</button>
+            <button class="chip" data-ctx="selection">Seleção de texto</button>
+          </div>
+        </div>
+
+        <button id="btn-add-ctxmenu-rule" class="btn btn-primary btn-block">
+          <span>Adicionar ao menu de contexto</span>
+        </button>
+
+        <p id="ctxmenu-status" class="status-msg hidden"></p>
+
+        <div id="ctxmenu-empty-state" class="empty-state hidden">
+          <div class="empty-icon">🖱️</div>
+          <p class="empty-title">Nenhum item personalizado</p>
+          <p class="empty-sub">Os itens criados aqui aparecem ao clicar com o botão direito do mouse.</p>
+        </div>
+        <ul id="ctxmenu-list" class="downloads-list"></ul>
+      </div>
+
+      <!-- ── Sub-tab: Histórico de execução ── -->
+      <div id="cc-panel-history" class="cc-subpanel hidden">
+        <div class="downloader-media-title-row" style="margin-bottom:6px">
+          <span class="downloader-section-title">Últimas execuções</span>
+          <button id="btn-refresh-cc-history" class="btn btn-ghost btn-xs">Atualizar</button>
+        </div>
+        <div id="cc-history-empty-state" class="empty-state hidden">
+          <div class="empty-icon">🕒</div>
+          <p class="empty-title">Nenhuma execução ainda</p>
+        </div>
+        <ul id="cc-history-list" class="downloads-list"></ul>
+      </div>
+
+      <!-- ── Sub-tab: Bridge local ── -->
+      <div id="cc-panel-settings" class="cc-subpanel hidden">
+        <p class="tool-hint">O Bridge é um servidor local em Python que executa comandos do Windows (PowerShell/CMD/scripts) por trás dos bastidores. Para rodar sempre em segundo plano (sem PowerShell aberto), execute <code>bridge/instalar_servico_bridge.ps1</code> uma vez (PowerShell); ele registra a tarefa de logon, inicia o bridge oculto e mostra um ícone na bandeja. Alternativa manual: <code>bridge/iniciar_bridge.bat</code>.</p>
+
+        <div class="input-group">
+          <label for="cc-bridge-url-input" class="input-label">URL do Bridge</label>
+          <input id="cc-bridge-url-input" type="text" class="text-input" placeholder="http://127.0.0.1:27182" autocomplete="off" spellcheck="false" />
+        </div>
+        <div class="input-group">
+          <label for="cc-bridge-token-input" class="input-label">Token de autenticação (opcional)</label>
+          <input id="cc-bridge-token-input" type="text" class="text-input" placeholder="Deixe vazio se não configurou bridge_config.json" autocomplete="off" spellcheck="false" />
+        </div>
+        <div class="input-group">
+          <label for="cc-history-max-input" class="input-label">Máx. de itens no histórico</label>
+          <input id="cc-history-max-input" type="number" class="text-input" min="10" max="500" />
+        </div>
+
+        <div class="segmented">
+          <button id="btn-save-cc-settings" class="btn btn-primary btn-sm" style="flex:1">Salvar</button>
+          <button id="btn-check-cc-bridge" class="btn btn-ghost btn-sm" style="flex:1">Testar conexão</button>
+        </div>
+
+        <p id="cc-settings-status" class="status-msg hidden"></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── Automação screen ─────────────────────────────────────────── -->
+  <main id="automacao-view" class="tool-view screen hidden">
+    <div class="tool-panel">
+      <div class="segmented" id="auto-subnav-segmented">
+        <button class="segmented-btn active" data-autotab="list">📋 Automações</button>
+        <button class="segmented-btn" data-autotab="record">● Gravar</button>
+        <button class="segmented-btn" data-autotab="ai">✨ IA</button>
+        <button class="segmented-btn" data-autotab="settings">⚙️ Config.</button>
+      </div>
+
+      <!-- ── Sub-tab: Lista de automações ── -->
+      <div id="auto-panel-list" class="cc-subpanel">
+        <p class="tool-hint">Automações completas de navegador e página: grave cliques/digitação/rolagem, gere passos com IA a partir de uma instrução, e reproduza tudo com um clique na aba ativa.</p>
+
+        <div id="auto-empty-state" class="empty-state hidden">
+          <div class="empty-icon">⚡</div>
+          <p class="empty-title">Nenhuma automação ainda</p>
+          <p class="empty-sub">Grave interações na página ou descreva uma tarefa para a IA montar os passos.</p>
+        </div>
+        <ul id="auto-list" class="downloads-list"></ul>
+      </div>
+
+      <!-- ── Sub-tab: Gravar ── -->
+      <div id="auto-panel-record" class="cc-subpanel hidden">
+        <div id="auto-record-idle">
+          <p class="tool-hint">Ao iniciar, interaja normalmente com a aba atual (clique, digite, marque caixas, selecione opções, tecle Enter, role a página). Os passos aparecem aqui em tempo real.</p>
+          <button id="btn-auto-start-record" class="btn btn-primary btn-block">
+            <span>● Gravar automação nesta aba</span>
+          </button>
+        </div>
+
+        <div id="auto-record-active" class="hidden">
+          <div class="recording-header">
+            <span class="rec-dot"></span>
+            <span>Gravando… interaja com a página</span>
+          </div>
+          <ul id="auto-record-steps" class="downloads-list steps"></ul>
+          <div class="input-group">
+            <label for="auto-record-name" class="input-label">Nome da automação</label>
+            <input id="auto-record-name" type="text" class="text-input" placeholder="Ex: Preencher formulário de contato" autocomplete="off" />
+          </div>
+          <div class="segmented">
+            <button id="btn-auto-stop-save" class="btn btn-primary btn-sm" style="flex:1">Parar e salvar</button>
+            <button id="btn-auto-cancel-record" class="btn btn-ghost btn-sm" style="flex:1">Cancelar</button>
+          </div>
+        </div>
+
+        <p id="auto-record-status" class="status-msg hidden"></p>
+      </div>
+
+      <!-- ── Sub-tab: Criar com IA ── -->
+      <div id="auto-panel-ai" class="cc-subpanel hidden">
+        <p class="tool-hint">Descreva em texto o que a automação deve fazer na página atual. A IA analisa os elementos interativos visíveis e monta os passos (clicar, preencher, selecionar, marcar, tecla, rolar).</p>
+        <div class="input-group">
+          <label for="auto-ai-instruction" class="input-label">Instrução</label>
+          <textarea id="auto-ai-instruction" class="text-input" rows="4" placeholder="Ex: preencha o campo de busca com 'notebook' e clique em pesquisar" spellcheck="false"></textarea>
+        </div>
+        <div class="input-group">
+          <label for="auto-ai-name" class="input-label">Nome da automação (opcional)</label>
+          <input id="auto-ai-name" type="text" class="text-input" placeholder="Minha automação com IA" autocomplete="off" />
+        </div>
+        <button id="btn-auto-ai-generate" class="btn btn-primary btn-block">
+          <span>Gerar automação com IA</span>
+        </button>
+        <p id="auto-ai-status" class="status-msg hidden"></p>
+      </div>
+
+      <!-- ── Sub-tab: Configurações (IA) ── -->
+      <div id="auto-panel-settings" class="cc-subpanel hidden">
+        <p class="tool-hint">Chave de API usada apenas para gerar automações a partir de texto (nunca enviada a outro lugar). Fica salva somente neste navegador.</p>
+        <div class="input-group">
+          <label for="auto-provider-select" class="input-label">Provedor de IA</label>
+          <select id="auto-provider-select" class="text-input">
+            <option value="anthropic">Anthropic (Claude)</option>
+            <option value="openai">OpenAI</option>
+            <option value="google">Google (Gemini — grátis)</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="auto-model-input" class="input-label">Modelo (opcional)</label>
+          <input id="auto-model-input" type="text" class="text-input" placeholder="Ex: gemini-1.5-flash" autocomplete="off" />
+        </div>
+        <div class="input-group">
+          <label for="auto-apikey-input" class="input-label">Chave de API</label>
+          <input id="auto-apikey-input" type="password" class="text-input" placeholder="Sua chave de API" autocomplete="off" />
+        </div>
+        <button id="btn-auto-save-settings" class="btn btn-primary btn-block">
+          <span>Salvar configurações</span>
+        </button>
+        <p id="auto-settings-status" class="status-msg hidden"></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── Addresses screen ─────────────────────────────────────────── -->
+  <main id="addresses-view" class="tool-view screen hidden">
+    <div class="tool-panel">
+      <h2 class="tool-title">Novo endereço</h2>
+      <div class="input-group">
+        <label for="addr-label-input" class="input-label">Identificação</label>
+        <input id="addr-label-input" type="text" class="text-input" placeholder="Ex: Casa, Trabalho" autocomplete="off" />
+      </div>
+      <div class="input-group">
+        <label for="addr-name-input" class="input-label">Nome completo</label>
+        <input id="addr-name-input" type="text" class="text-input" placeholder="Nome do destinatário" autocomplete="off" />
+      </div>
+      <div class="input-group">
+        <label for="addr-street-input" class="input-label">Rua / Número / Complemento</label>
+        <input id="addr-street-input" type="text" class="text-input" placeholder="Rua Exemplo, 123, Apto 4" autocomplete="off" />
+      </div>
+      <div class="input-group">
+        <label for="addr-neighborhood-input" class="input-label">Bairro</label>
+        <input id="addr-neighborhood-input" type="text" class="text-input" placeholder="Ex: Centro" autocomplete="off" />
+      </div>
+      <div class="input-group">
+        <label for="addr-city-input" class="input-label">Cidade</label>
+        <input id="addr-city-input" type="text" class="text-input" placeholder="Cidade" autocomplete="off" />
+      </div>
+      <div class="input-group">
+        <label for="addr-state-input" class="input-label">Estado</label>
+        <input id="addr-state-input" type="text" class="text-input" placeholder="UF" autocomplete="off" maxlength="2" />
+      </div>
+      <div class="input-group">
+        <label for="addr-zip-input" class="input-label">CEP</label>
+        <input id="addr-zip-input" type="text" class="text-input" placeholder="00000-000" autocomplete="off" />
+      </div>
+      <div class="input-group">
+        <label for="addr-phone-input" class="input-label">Telefone (opcional)</label>
+        <input id="addr-phone-input" type="text" class="text-input" placeholder="(00) 00000-0000" autocomplete="off" />
+      </div>
+      <button id="btn-add-address" class="btn btn-primary btn-block">
+        <span>Salvar endereço</span>
+      </button>
+      <p id="addr-status" class="status-msg hidden"></p>
+
+      <div id="addresses-empty-state" class="empty-state hidden">
+        <div class="empty-icon">📍</div>
+        <p class="empty-title">Nenhum endereço salvo</p>
+      </div>
+      <ul id="addresses-list" class="credentials-list"></ul>
+    </div>
+  </main>
+
+  <!-- ── Google Drive / OneDrive screen ──────────────────────────────────── -->
+  <main id="gdrive-view" class="tool-view screen hidden">
+    <div class="tool-panel">
+
+      <!-- Cloud Provider Selector (expansível, somente texto) -->
+      <div class="cloud-dropdown" id="cloud-provider-dropdown" style="margin-bottom:10px">
+        <button type="button" class="cloud-dropdown-toggle" id="cloud-provider-toggle" aria-haspopup="listbox" aria-expanded="false">
+          <span id="cloud-provider-toggle-label">Google Drive</span>
+          <svg class="cloud-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="cloud-dropdown-list hidden" id="cloud-provider-list" role="listbox">
+          <button type="button" class="cloud-dropdown-item active" data-cloud="gdrive" role="option" aria-selected="true">Google Drive</button>
+          <button type="button" class="cloud-dropdown-item" data-cloud="onedrive" role="option" aria-selected="false">OneDrive</button>
+        </div>
+      </div>
+
+      <!-- ─── Google Drive Panel ─── -->
+      <div id="gdrive-cloud-panel">
+        <!-- Login state -->
+        <div id="gdrive-login-panel">
+          <p class="tool-hint">Conecte sua conta do Google para navegar nos seus arquivos do Drive direto por aqui (somente leitura). Você pode conectar múltiplas contas.</p>
+          <button id="btn-gdrive-login" class="btn btn-primary btn-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M7.71 3.5L1.15 15l3.43 6h6.56l-6.56-12z"/><path d="M9.5 15l3.43 6h7.92l-3.43-6z"/><path d="M14.29 3.5H7.71l6.58 11.5h6.56z"/></svg>
+            <span>Conectar com Google Drive</span>
+          </button>
+          <!-- Multi-account selector -->
+          <div id="gdrive-accounts-bar" class="hidden" style="margin-top:8px">
+            <label class="input-label">Conta ativa do Drive:</label>
+            <div style="display:flex;gap:6px;margin-top:4px">
+              <select id="gdrive-account-select" class="text-input" style="flex:1;padding:4px 8px;font-size:12px;height:30px"></select>
+              <button id="btn-gdrive-add-account" class="btn btn-ghost btn-sm" title="Conectar outra conta do Google">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </button>
+              <button id="btn-gdrive-remove-account" class="btn btn-ghost btn-sm" title="Remover conta selecionada" style="color:var(--error)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
+          </div>
+          <button id="btn-gdrive-goto-settings" class="btn btn-ghost btn-sm btn-block" style="margin-top:6px">
+            Configurar Client ID
+          </button>
+          <p id="gdrive-login-status" class="status-msg hidden"></p>
+        </div>
+
+        <!-- Settings state -->
+        <div id="gdrive-settings-panel" class="hidden">
+          <p class="tool-hint">Crie um OAuth Client ID (tipo "App para Chrome") no Google Cloud Console e cole abaixo. Adicione a URL de redirecionamento exibida aqui nas origens autorizadas do seu projeto Google.</p>
+          <div class="input-group">
+            <label class="input-label">URL de redirecionamento desta extensão</label>
+            <div class="shortener-result">
+              <input id="gdrive-redirect-uri" class="text-input" type="text" readonly />
+              <button id="btn-gdrive-copy-redirect" class="icon-btn" title="Copiar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="gdrive-client-id-input" class="input-label">Client ID</label>
+            <input id="gdrive-client-id-input" type="text" class="text-input" placeholder="xxxxxxxx.apps.googleusercontent.com" autocomplete="off" spellcheck="false" />
+          </div>
+          <button id="btn-gdrive-save-settings" class="btn btn-primary btn-block">
+            <span>Salvar e Conectar</span>
+          </button>
+          <button id="btn-gdrive-back-settings" class="btn btn-ghost btn-sm btn-block" style="margin-top:6px">Voltar</button>
+          <p id="gdrive-settings-status" class="status-msg hidden"></p>
+        </div>
+
+        <!-- Browser state -->
+        <div id="gdrive-browser-panel" class="hidden">
+          <div class="gdrive-profile">
+            <img id="gdrive-avatar" class="gdrive-avatar hidden" alt="" />
+            <div class="gdrive-profile-info">
+              <span id="gdrive-user-name" class="credential-title"></span>
+              <span id="gdrive-user-email" class="credential-sub"></span>
+            </div>
+            <button id="btn-gdrive-switch-account" class="icon-btn" title="Trocar conta" style="font-size:10px;padding:4px 6px">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </button>
+            <button id="btn-gdrive-refresh" class="icon-btn" title="Atualizar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+            </button>
+            <button id="btn-gdrive-logout" class="icon-btn" title="Sair">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            </button>
+          </div>
+
+          <div class="gdrive-quota-bar">
+            <div id="gdrive-quota-fill" class="gdrive-quota-fill"></div>
+          </div>
+          <span id="gdrive-quota-label" class="tool-hint"></span>
+
+          <div class="input-group">
+            <input id="gdrive-search-input" type="text" class="text-input" placeholder="🔍 Buscar no Drive…" autocomplete="off" />
+          </div>
+
+          <div class="format-chips" id="gdrive-filter-pills">
+            <button class="chip active" data-filter="all">Tudo</button>
+            <button class="chip" data-filter="folder">Pastas</button>
+            <button class="chip" data-filter="document">Docs</button>
+            <button class="chip" data-filter="spreadsheet">Planilhas</button>
+            <button class="chip" data-filter="image">Imagens</button>
+            <button class="chip" data-filter="pdf">PDF</button>
+          </div>
+
+          <div id="gdrive-breadcrumbs" class="gdrive-breadcrumbs"></div>
+
+          <div id="gdrive-empty-state" class="empty-state hidden">
+            <div class="empty-icon">📁</div>
+            <p id="gdrive-empty-text" class="empty-title">Nenhum arquivo encontrado</p>
+          </div>
+          <ul id="gdrive-files-list" class="downloads-list"></ul>
+        </div>
+      </div>
+
+      <!-- ─── OneDrive Panel ─── -->
+      <div id="onedrive-cloud-panel" class="hidden">
+        <!-- OneDrive Login -->
+        <div id="onedrive-login-panel">
+          <p class="tool-hint">Conecte sua conta da Microsoft para navegar nos seus arquivos do OneDrive direto por aqui. Você pode conectar múltiplas contas.</p>
+          <button id="btn-onedrive-login" class="btn btn-primary btn-block" style="background:linear-gradient(135deg,#0078d4,#005fa3)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M21.2 11.1a5 5 0 00-7.4-5.8A6.5 6.5 0 002 11.5a4.5 4.5 0 001 8.9h17a3.5 3.5 0 001.2-6.3z"/></svg>
+            <span>Conectar com Microsoft OneDrive</span>
+          </button>
+          <!-- Multi-account selector -->
+          <div id="onedrive-accounts-bar" class="hidden" style="margin-top:8px">
+            <label class="input-label">Conta ativa do OneDrive:</label>
+            <div style="display:flex;gap:6px;margin-top:4px">
+              <select id="onedrive-account-select" class="text-input" style="flex:1;padding:4px 8px;font-size:12px;height:30px"></select>
+              <button id="btn-onedrive-add-account" class="btn btn-ghost btn-sm" title="Conectar outra conta Microsoft">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </button>
+              <button id="btn-onedrive-remove-account" class="btn btn-ghost btn-sm" title="Remover conta selecionada" style="color:var(--error)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
+          </div>
+          <button id="btn-onedrive-goto-settings" class="btn btn-ghost btn-sm btn-block" style="margin-top:6px">
+            Configurar Client ID da Microsoft
+          </button>
+          <p id="onedrive-login-status" class="status-msg hidden"></p>
+        </div>
+
+        <!-- OneDrive Settings -->
+        <div id="onedrive-settings-panel" class="hidden">
+          <p class="tool-hint">Registre um aplicativo no <a href="https://portal.azure.com" target="_blank" rel="noopener noreferrer" style="color:var(--accent-light)">Azure Portal</a> e cole o Client ID (Application ID) abaixo. Use o tipo de conta "Contas pessoais e corporativas". A URI de redirecionamento será gerada automaticamente.</p>
+          <div class="input-group">
+            <label class="input-label">URL de redirecionamento desta extensão</label>
+            <div class="shortener-result">
+              <input id="onedrive-redirect-uri" class="text-input" type="text" readonly />
+              <button id="btn-onedrive-copy-redirect" class="icon-btn" title="Copiar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="onedrive-client-id-input" class="input-label">Client ID (Application ID)</label>
+            <input id="onedrive-client-id-input" type="text" class="text-input" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" autocomplete="off" spellcheck="false" />
+          </div>
+          <button id="btn-onedrive-save-settings" class="btn btn-primary btn-block" style="background:linear-gradient(135deg,#0078d4,#005fa3)">
+            <span>Salvar e Conectar ao OneDrive</span>
+          </button>
+          <button id="btn-onedrive-back-settings" class="btn btn-ghost btn-sm btn-block" style="margin-top:6px">Voltar</button>
+          <p id="onedrive-settings-status" class="status-msg hidden"></p>
+        </div>
+
+        <!-- OneDrive Browser -->
+        <div id="onedrive-browser-panel" class="hidden">
+          <div class="gdrive-profile">
+            <div class="gdrive-avatar" style="background:linear-gradient(135deg,#0078d4,#005fa3);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px" id="onedrive-avatar-initials">MS</div>
+            <div class="gdrive-profile-info">
+              <span id="onedrive-user-name" class="credential-title"></span>
+              <span id="onedrive-user-email" class="credential-sub"></span>
+            </div>
+            <button id="btn-onedrive-switch-account" class="icon-btn" title="Trocar conta" style="font-size:10px;padding:4px 6px">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </button>
+            <button id="btn-onedrive-refresh" class="icon-btn" title="Atualizar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+            </button>
+            <button id="btn-onedrive-logout" class="icon-btn" title="Sair">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            </button>
+          </div>
+
+          <div class="gdrive-quota-bar">
+            <div id="onedrive-quota-fill" class="gdrive-quota-fill" style="background:linear-gradient(90deg,#0078d4,#40a9ff)"></div>
+          </div>
+          <span id="onedrive-quota-label" class="tool-hint"></span>
+
+          <div class="input-group">
+            <input id="onedrive-search-input" type="text" class="text-input" placeholder="🔍 Buscar no OneDrive…" autocomplete="off" />
+          </div>
+
+          <div class="format-chips" id="onedrive-filter-pills">
+            <button class="chip active" data-filter="all">Tudo</button>
+            <button class="chip" data-filter="folder">Pastas</button>
+            <button class="chip" data-filter="document">Docs</button>
+            <button class="chip" data-filter="image">Imagens</button>
+            <button class="chip" data-filter="pdf">PDF</button>
+          </div>
+
+          <div id="onedrive-breadcrumbs" class="gdrive-breadcrumbs"></div>
+
+          <div id="onedrive-empty-state" class="empty-state hidden">
+            <div class="empty-icon">☁️</div>
+            <p id="onedrive-empty-text" class="empty-title">Nenhum arquivo encontrado</p>
+          </div>
+          <ul id="onedrive-files-list" class="downloads-list"></ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── E-mail Temporário screen ──────────────────────────────────── -->
+  <main id="email-view" class="tool-view screen hidden">
+    <div class="tool-panel">
+      <!-- Address box -->
+      <div class="inbox-address-card">
+        <div class="inbox-address-header">
+          <span class="inbox-address-label">E-mails temporários:</span>
+          <span id="temp-mail-status-dot" class="status-indicator online" title="Conectado e recebendo mensagens">● Ativo</span>
+        </div>
+        <div class="inbox-address-row">
+          <select id="temp-mail-account-select" class="text-input inbox-address-input" title="Selecionar e-mail temporário"></select>
+          <button id="btn-copy-temp-mail" class="icon-btn" title="Copiar endereço de e-mail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
+          <button id="btn-delete-temp-account" class="icon-btn" title="Excluir este e-mail temporário" style="color:var(--error)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+          </button>
+        </div>
+        <div class="inbox-address-actions">
+          <button id="btn-refresh-temp-mail" class="btn btn-ghost btn-xs" title="Verificar novos e-mails agora">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+            <span>Atualizar</span>
+          </button>
+          <button id="btn-new-temp-mail" class="btn btn-ghost btn-xs" title="Criar um novo endereço descartável">
+            <span>➕ Novo E-mail</span>
+          </button>
+          <span id="temp-mail-msg-count" class="tool-hint" style="margin-left:auto">0 mensagem(ns)</span>
+        </div>
+      </div>
+
+      <p id="temp-mail-status" class="status-msg hidden"></p>
+
+      <!-- Messages list view -->
+      <div id="temp-mail-list-container">
+        <div id="temp-mail-empty" class="empty-state hidden">
+          <div class="empty-icon">📫</div>
+          <p class="empty-title">Caixa de entrada vazia</p>
+          <p class="empty-sub">Use o e-mail acima para cadastros. As mensagens recebidas aparecerão aqui!</p>
+        </div>
+        <ul id="temp-mail-messages-list" class="inbox-messages-list"></ul>
+      </div>
+
+      <!-- Message reader view (opens when message is clicked) -->
+      <div id="temp-mail-reader" class="inbox-reader-panel hidden">
+        <div class="inbox-reader-toolbar">
+          <button id="btn-reader-back" class="btn btn-ghost btn-xs" title="Voltar à lista de e-mails">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><polyline points="15 18 9 12 15 6"/></svg>
+            <span>Voltar</span>
+          </button>
+          <button id="btn-reader-download" class="btn btn-ghost btn-xs" title="Baixar este e-mail (.eml)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/></svg>
+            <span>Baixar</span>
+          </button>
+          <button id="btn-reader-delete" class="btn btn-ghost btn-xs" style="color:var(--error)" title="Excluir este e-mail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+            <span>Excluir</span>
+          </button>
+        </div>
+
+        <!-- 2FA Code Callout (if code detected in email) -->
+        <div id="reader-2fa-card" class="inbox-2fa-card hidden">
+          <div class="inbox-2fa-info">
+            <span class="inbox-2fa-title">🔑 Código de Verificação Detectado</span>
+            <span id="reader-2fa-code" class="inbox-2fa-code">123456</span>
+          </div>
+          <button id="btn-copy-2fa" class="btn btn-primary btn-sm">Copiar Código</button>
+        </div>
+
+        <div class="inbox-reader-header">
+          <h3 id="reader-subject" class="reader-subject">Sem Assunto</h3>
+          <div class="reader-meta-row">
+            <span class="reader-meta-label">De:</span>
+            <span id="reader-from" class="reader-meta-val">remetente@exemplo.com</span>
+          </div>
+          <div class="reader-meta-row">
+            <span class="reader-meta-label">Data:</span>
+            <span id="reader-date" class="reader-meta-val">Hoje, 10:00</span>
+          </div>
+        </div>
+
+        <!-- Reader Body Container -->
+        <div id="reader-body-container" class="reader-body-container">
+          <div id="reader-body-content" class="reader-body-content"></div>
+        </div>
+
+        <!-- Attachments if any -->
+        <div id="reader-attachments-box" class="reader-attachments-box hidden">
+          <span class="input-label" style="font-size:11px;font-weight:600">Anexos:</span>
+          <div id="reader-attachments-list" class="reader-attachments-list"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── Cliente de E-mail screen (Gmail / Outlook / IMAP genérico) ──────────── -->
+  <main id="emailclient-view" class="tool-view screen hidden">
+    <div class="tool-panel ec-panel">
+
+      <!-- Account bar -->
+      <div id="ec-account-bar" class="ec-account-bar"></div>
+
+      <div id="ec-list-screen">
+        <div class="ec-toolbar">
+          <button id="ec-btn-folders" class="btn btn-ghost btn-sm" title="Pastas">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/></svg>
+            <span id="ec-current-folder-label">Caixa de entrada</span>
+          </button>
+          <button id="ec-btn-refresh" class="icon-btn" title="Atualizar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+          </button>
+          <button id="ec-btn-compose" class="btn btn-primary btn-sm" title="Novo e-mail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+            <span>Novo</span>
+          </button>
+          <button id="ec-btn-accounts" class="icon-btn" title="Contas">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          </button>
+        </div>
+
+        <!-- Folder chips (compact, instead of a drawer, to match this sidebar's tight width) -->
+        <div id="ec-folder-chips" class="format-chips ec-folder-chips">
+          <button class="chip active" data-folder="INBOX">📥 Entrada</button>
+          <button class="chip" data-folder="SENT">📤 Enviados</button>
+          <button class="chip" data-folder="DRAFT">📝 Rascunhos</button>
+          <button class="chip" data-folder="SPAM">🚫 Spam</button>
+          <button class="chip" data-folder="ARCHIVE">🗄 Arquivo</button>
+          <button class="chip" data-folder="ALL">📚 Todos</button>
+          <button class="chip" data-folder="TRASH">🗑 Lixeira</button>
+        </div>
+
+        <div class="input-group">
+          <input id="ec-search-input" type="text" class="text-input" placeholder="🔍 Pesquisar e-mails…" autocomplete="off" />
+        </div>
+
+        <p id="ec-list-status" class="status-msg hidden"></p>
+
+        <div id="ec-empty-state" class="empty-state hidden">
+          <div class="empty-icon">📪</div>
+          <p class="empty-title">Nenhuma conta configurada</p>
+          <p class="empty-sub">Toque no ícone de contas para conectar Gmail, Outlook ou uma conta IMAP/SMTP genérica.</p>
+        </div>
+
+        <ul id="ec-message-list" class="inbox-messages-list"></ul>
+      </div>
+
+      <!-- Reading pane -->
+      <div id="ec-reading-screen" class="inbox-reader-panel hidden">
+        <div class="inbox-reader-toolbar">
+          <button id="ec-btn-reader-back" class="btn btn-ghost btn-xs">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><polyline points="15 18 9 12 15 6"/></svg>
+            <span>Voltar</span>
+          </button>
+          <button id="ec-btn-reply" class="btn btn-ghost btn-xs">↩ Responder</button>
+          <button id="ec-btn-forward" class="btn btn-ghost btn-xs">➡ Reencam.</button>
+          <button id="ec-btn-download-eml" class="btn btn-ghost btn-xs" title="Baixar .eml">⬇</button>
+          <button id="ec-btn-delete-msg" class="btn btn-ghost btn-xs" style="color:var(--error)" title="Excluir">🗑</button>
+        </div>
+
+        <div class="inbox-reader-header">
+          <h3 id="ec-reader-subject" class="reader-subject">(sem assunto)</h3>
+          <div class="reader-meta-row">
+            <span class="reader-meta-label">De:</span>
+            <span id="ec-reader-from" class="reader-meta-val"></span>
+          </div>
+          <div class="reader-meta-row">
+            <span class="reader-meta-label">Para:</span>
+            <span id="ec-reader-to" class="reader-meta-val"></span>
+          </div>
+          <div class="reader-meta-row">
+            <span class="reader-meta-label">Data:</span>
+            <span id="ec-reader-date" class="reader-meta-val"></span>
+          </div>
+        </div>
+
+        <div id="ec-reader-attachments-box" class="reader-attachments-box hidden">
+          <span class="input-label" style="font-size:11px;font-weight:600">Anexos:</span>
+          <div id="ec-reader-attachments-list" class="reader-attachments-list"></div>
+        </div>
+
+        <div class="reader-body-container">
+          <iframe id="ec-reader-body-frame" class="ec-reader-body-frame" title="Corpo da mensagem" sandbox="allow-same-origin allow-popups"></iframe>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Compose modal -->
+  <div id="ec-compose-overlay" class="ec-modal-overlay hidden">
+    <div class="ec-modal">
+      <div class="ec-modal-header">
+        <span id="ec-compose-title">Novo e-mail</span>
+        <button id="ec-btn-close-compose" class="icon-btn">✕</button>
+      </div>
+      <div class="ec-modal-body">
+        <div class="input-group">
+          <label class="input-label">De</label>
+          <select id="ec-compose-from" class="text-input"></select>
+        </div>
+        <div class="input-group">
+          <input id="ec-compose-to" type="text" class="text-input" placeholder="Para" />
+        </div>
+        <div class="input-group">
+          <input id="ec-compose-subject" type="text" class="text-input" placeholder="Assunto" />
+        </div>
+
+        <div class="ec-compose-toolbar">
+          <button id="ec-btn-insert-link" type="button" class="btn btn-ghost btn-xs" title="Inserir link">🔗 Link</button>
+          <button id="ec-btn-insert-image-url" type="button" class="btn btn-ghost btn-xs" title="Inserir imagem por URL">🖼 URL</button>
+          <button id="ec-btn-insert-image-file" type="button" class="btn btn-ghost btn-xs" title="Inserir imagem do computador">🖼 Arquivo</button>
+          <button id="ec-btn-insert-current-page" type="button" class="btn btn-ghost btn-xs" title="Inserir link da aba atual">🌐 Aba atual</button>
+          <button id="ec-btn-attach-file" type="button" class="btn btn-ghost btn-xs" title="Anexar arquivo">📎 Anexar</button>
+        </div>
+
+        <div id="ec-compose-text" class="ec-compose-text" contenteditable="true" data-placeholder="Escreva sua mensagem…"></div>
+
+        <div id="ec-attachment-list" class="ec-attachment-list"></div>
+
+        <input id="ec-file-input-image" type="file" accept="image/*" class="hidden" />
+        <input id="ec-file-input-attachment" type="file" multiple class="hidden" />
+
+        <p id="ec-compose-status" class="status-msg hidden"></p>
+      </div>
+      <div class="ec-modal-footer">
+        <button id="ec-btn-send" class="btn btn-primary">Enviar</button>
+        <button id="ec-btn-discard" class="btn btn-ghost">Descartar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accounts modal -->
+  <div id="ec-accounts-overlay" class="ec-modal-overlay hidden">
+    <div class="ec-modal">
+      <div class="ec-modal-header">
+        <span>Contas de e-mail</span>
+        <button id="ec-btn-close-accounts" class="icon-btn">✕</button>
+      </div>
+      <div class="ec-modal-body">
+
+        <!-- ── Sub-view: lista de contas + adicionar (padrão) ── -->
+        <div id="ec-accounts-main-panel">
+        <div id="ec-accounts-list"></div>
+
+        <hr style="border-color:var(--border);width:100%" />
+
+        <div class="input-group">
+          <label class="input-label">URI de redirecionamento OAuth desta extensão</label>
+          <div class="shortener-result">
+            <input id="ec-redirect-uri" class="text-input" type="text" readonly />
+            <button id="ec-btn-copy-redirect" class="icon-btn" title="Copiar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            </button>
+          </div>
+          <p class="tool-hint">Cadastre EXATAMENTE esta URI: no Google Cloud Console como client tipo <strong>Web application</strong>, e no Azure App registrations como plataforma <strong>Single-page application (SPA)</strong>.</p>
+        </div>
+
+        <h4 class="tool-title" style="margin-top:6px">Adicionar conta</h4>
+        <div class="segmented">
+          <button id="ec-btn-add-gmail" class="btn btn-ghost btn-sm" style="flex:1">+ Gmail</button>
+          <button id="ec-btn-add-outlook" class="btn btn-ghost btn-sm" style="flex:1">+ Outlook</button>
+        </div>
+        <div class="segmented" style="margin-top:6px">
+          <button id="ec-btn-goto-gmail-settings" class="btn btn-ghost btn-sm" style="flex:1">⚙ Configurar Gmail</button>
+          <button id="ec-btn-goto-outlook-settings" class="btn btn-ghost btn-sm" style="flex:1">⚙ Configurar Outlook</button>
+        </div>
+
+        <h4 class="tool-title" style="margin-top:10px">Conta IMAP/SMTP genérica</h4>
+        <div class="input-group"><input id="ec-imap-email" type="text" class="text-input" placeholder="E-mail" /></div>
+        <div class="input-group"><input id="ec-imap-user" type="text" class="text-input" placeholder="Usuário (se diferente do e-mail)" /></div>
+        <div class="input-group"><input id="ec-imap-pass" type="password" class="text-input" placeholder="Senha / senha de app" /></div>
+        <div class="grid2">
+          <input id="ec-imap-host" type="text" class="text-input" placeholder="Servidor IMAP" />
+          <input id="ec-imap-port" type="number" class="text-input" placeholder="Porta IMAP (993)" />
+        </div>
+        <div class="grid2">
+          <input id="ec-smtp-host" type="text" class="text-input" placeholder="Servidor SMTP" />
+          <input id="ec-smtp-port" type="number" class="text-input" placeholder="Porta SMTP (465)" />
+        </div>
+        <div class="input-group"><input id="ec-bridge-url" type="text" class="text-input" placeholder="URL da bridge local (http://127.0.0.1:2003)" /></div>
+        <button id="ec-btn-add-imap" class="btn btn-ghost btn-block">+ Adicionar conta IMAP/SMTP</button>
+        <p class="tool-hint">Contas IMAP/SMTP genéricas exigem o serviço local incluso em <code>bridge-email/</code> (veja bridge-email/README.md).</p>
+
+        <p id="ec-accounts-status" class="status-msg hidden"></p>
+        </div>
+        <!-- ── /Sub-view: lista de contas ── -->
+
+        <!-- ── Sub-view: Configurações do Gmail ── -->
+        <div id="ec-gmail-settings-panel" class="hidden">
+          <p class="tool-hint">Crie um OAuth Client ID (tipo "Web application") no Google Cloud Console e cole abaixo, junto com o Client Secret. Adicione a URI de redirecionamento exibida aqui nas origens/URIs autorizadas do seu projeto Google.</p>
+          <div class="input-group">
+            <label class="input-label">URI de redirecionamento desta extensão</label>
+            <div class="shortener-result">
+              <input id="ec-gmail-redirect-uri" class="text-input" type="text" readonly />
+              <button id="ec-btn-copy-gmail-redirect" class="icon-btn" title="Copiar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="ec-gmail-client-id-input" class="input-label">Client ID</label>
+            <input id="ec-gmail-client-id-input" type="text" class="text-input" placeholder="xxxxxxxx.apps.googleusercontent.com" autocomplete="off" spellcheck="false" />
+          </div>
+          <div class="input-group">
+            <label for="ec-gmail-client-secret-input" class="input-label">Client Secret</label>
+            <input id="ec-gmail-client-secret-input" type="text" class="text-input" placeholder="GOCSPX-…" autocomplete="off" spellcheck="false" />
+          </div>
+          <button id="ec-btn-save-gmail-settings" class="btn btn-primary btn-block">
+            <span>Salvar</span>
+          </button>
+          <button id="ec-btn-back-gmail-settings" class="btn btn-ghost btn-sm btn-block" style="margin-top:6px">Voltar</button>
+          <p id="ec-gmail-settings-status" class="status-msg hidden"></p>
+        </div>
+        <!-- ── /Sub-view: Configurações do Gmail ── -->
+
+        <!-- ── Sub-view: Configurações do Outlook ── -->
+        <div id="ec-outlook-settings-panel" class="hidden">
+          <p class="tool-hint">Crie um "App registration" no Azure Portal (plataforma "Single-page application (SPA)") e cole abaixo o Application (client) ID. Adicione a URI de redirecionamento exibida aqui na plataforma SPA do seu app.</p>
+          <div class="input-group">
+            <label class="input-label">URI de redirecionamento desta extensão</label>
+            <div class="shortener-result">
+              <input id="ec-outlook-redirect-uri" class="text-input" type="text" readonly />
+              <button id="ec-btn-copy-outlook-redirect" class="icon-btn" title="Copiar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="ec-outlook-client-id-input" class="input-label">Application (client) ID</label>
+            <input id="ec-outlook-client-id-input" type="text" class="text-input" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" autocomplete="off" spellcheck="false" />
+          </div>
+          <div class="input-group">
+            <label for="ec-outlook-tenant-input" class="input-label">Tenant</label>
+            <input id="ec-outlook-tenant-input" type="text" class="text-input" placeholder="common" autocomplete="off" spellcheck="false" />
+          </div>
+          <button id="ec-btn-save-outlook-settings" class="btn btn-primary btn-block">
+            <span>Salvar</span>
+          </button>
+          <button id="ec-btn-back-outlook-settings" class="btn btn-ghost btn-sm btn-block" style="margin-top:6px">Voltar</button>
+          <p id="ec-outlook-settings-status" class="status-msg hidden"></p>
+        </div>
+        <!-- ── /Sub-view: Configurações do Outlook ── -->
+
+      </div>
+    </div>
+  </div>
+
+  <div id="ec-print-area" style="position:fixed;top:-99999px;left:-99999px"></div>
+
+  <script src="sidepanel.js"></script>
+  <script src="screen-accent.js"></script>
+</body>
+</html>

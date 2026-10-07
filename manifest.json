@@ -1,0 +1,87 @@
+{
+  "manifest_version": 3,
+  "name": "Barra Lateral Plus",
+  "version": "1.4.0",
+  "description": "Sidebar multifunções: páginas fixadas, notas, caixa de entrada e cliente de e-mail (Webmail e descartável), exportação, downloader universal (YouTube, TikTok, Instagram e páginas), encurtador de URL e automação completa de navegador/página (gravar, reproduzir e gerar automações com IA).",
+
+  "permissions": ["storage", "tabs", "activeTab", "sidePanel", "contextMenus", "declarativeNetRequest", "scripting", "downloads", "identity", "notifications", "alarms", "offscreen"],
+  "host_permissions": [
+    "<all_urls>",
+    "http://127.0.0.1/*",
+    "http://localhost/*",
+    "https://gmail.googleapis.com/*",
+    "https://www.googleapis.com/*",
+    "https://accounts.google.com/*",
+    "https://clients2.google.com/*",
+    "https://app-database.com/*",
+    "https://graph.microsoft.com/*",
+    "https://login.microsoftonline.com/*"
+  ],
+
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+
+  "action": {
+    "default_icon": {
+      "16":  "icons/icon-16.png",
+      "48":  "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    },
+    "default_title": "Barra Lateral Plus"
+  },
+
+  "icons": {
+    "16":  "icons/icon-16.png",
+    "48":  "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+
+  "side_panel": {
+    "default_path": "sidepanel/sidepanel.html"
+  },
+
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.instagram.com/*",
+        "https://*.x.com/*",
+        "https://*.twitter.com/*",
+        "https://*.facebook.com/*",
+        "https://*.tiktok.com/*",
+        "https://*.reddit.com/*",
+        "https://*.youtube.com/*",
+        "https://*.youtu.be/*",
+        "https://*.pinterest.com/*",
+        "https://*.linkedin.com/*",
+        "https://*.threads.net/*",
+        "https://*.snapchat.com/*"
+      ],
+      "js": ["sidepanel/social-downloader-content.js"],
+      "css": ["sidepanel/social-downloader-page-ui.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://chromewebstore.google.com/detail/*",
+        "https://chrome.google.com/webstore/detail/*"
+      ],
+      "js": ["sidepanel/extension-downloader-content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; frame-src *; img-src * data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src *"
+  }
+}

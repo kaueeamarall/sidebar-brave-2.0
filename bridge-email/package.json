@@ -1,0 +1,16 @@
+{
+  "name": "cliente-email-plus-bridge",
+  "version": "1.0.0",
+  "description": "Bridge local IMAP/SMTP <-> REST usado pela extensão Cliente E-mail Plus para contas genéricas sem API REST.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "imapflow": "^1.0.152",
+    "mailparser": "^3.7.1",
+    "nodemailer": "^6.9.13"
+  }
+}

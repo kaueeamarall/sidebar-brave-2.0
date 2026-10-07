@@ -1,0 +1,142 @@
+#social-downloader-toolbar,
+.social-downloader-select,
+.social-downloader-preview {
+  all: initial;
+  font-family: "Segoe UI", Roboto, system-ui, sans-serif;
+}
+
+#social-downloader-toolbar {
+  position: fixed;
+  z-index: 2147483646;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 13px;
+  border: 1px solid #ffffff1c;
+  border-radius: 14px;
+  background: #050507ee;
+  color: #fff;
+  box-shadow: 0 10px 34px #000b, 0 0 22px #7c3aed18;
+  font-size: 12px;
+  backdrop-filter: blur(16px);
+}
+
+#social-downloader-toolbar button,
+.social-downloader-preview button {
+  border: 1px solid #ffffff14;
+  border-radius: 9px;
+  padding: 8px 10px;
+  cursor: pointer;
+  color: #fff;
+  background: #17171c;
+  font: 600 12px "Segoe UI", Roboto, sans-serif;
+  transition: transform .16s, filter .16s;
+}
+
+#social-downloader-toolbar button:hover,
+.social-downloader-preview button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.18);
+}
+
+#social-downloader-toolbar .social-downloader-download,
+.social-downloader-preview-download {
+  background: linear-gradient(135deg, #7656ff, #a855f7);
+}
+
+#social-downloader-toolbar button:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+}
+
+#social-downloader-toolbar .social-downloader-close {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  justify-content: center;
+  border-radius: 50%;
+  background: #3a1723;
+  color: #ff9fb5;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.social-downloader-select {
+  position: fixed;
+  z-index: 2147483645;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #09090bee;
+  color: #fff;
+  box-shadow: 0 3px 14px #000b, 0 0 0 3px #8b5cf622;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  transition: transform .16s, background .16s, box-shadow .16s;
+}
+
+.social-downloader-select:hover,
+.social-downloader-select.selected {
+  background: linear-gradient(135deg, #7656ff, #a855f7);
+  transform: scale(1.12);
+  box-shadow: 0 0 0 3px #a855f755, 0 4px 16px #000b;
+}
+
+.social-downloader-preview {
+  position: fixed;
+  z-index: 2147483647;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #000d;
+  backdrop-filter: blur(8px);
+}
+
+.social-downloader-preview-card {
+  position: relative;
+  width: min(90vw, 900px);
+  max-height: 90vh;
+  padding: 38px 16px 16px;
+  border: 1px solid #ffffff1a;
+  border-radius: 16px;
+  background: #050507;
+  box-shadow: 0 18px 60px #000, 0 0 36px #7c3aed22;
+}
+
+.social-downloader-preview-content {
+  display: grid;
+  place-items: center;
+  min-height: 160px;
+}
+
+.social-downloader-preview-content img,
+.social-downloader-preview-content video {
+  display: block;
+  max-width: 86vw;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.social-downloader-preview-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 22px !important;
+}
+
+.social-downloader-preview-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+  color: #d1d1d6;
+  font-size: 13px;
+}
